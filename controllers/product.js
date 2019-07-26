@@ -5,6 +5,7 @@ exports.createProduct = (req, res, next) => {
     const product = new Products({
         title: req.body.title,
         description: req.body.description,
+        category: req.body.category,
         imageUrl: req.body.imageUrl,
         price: req.body.price,
         //userId: req.body.userId
@@ -51,6 +52,7 @@ exports.modifyProduct = (req, res, next) => {
         _id: req.params.id,
         title: req.body.title,
         description: req.body.description,
+        category: req.body.category,
         imageUrl: req.body.imageUrl,
         price: req.body.price,
         // userId: req.body.userId

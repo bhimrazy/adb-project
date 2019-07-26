@@ -9,7 +9,7 @@
   <header>
     <% include ./partials/header%>
   </header>
-  <main role="main" class=" mt-4">
+  <main role="main" class=" mt-4 mb-4">
     <div class="container text-center mt-4 p-3">
       <h1 class="mt-4">Welcome to <a href="/" class="item text-decoration-none ">Aadharbhoot Pasal.</a></h1>
       <h4>An approach to help people.</h4>
@@ -17,27 +17,20 @@
 
     <div class="container-fluid">
       <div class='product-list mt-2 '>
-        <h1 class="m-1 p-3 text-center display-4"><u>List of Products</u></h1>
-        <div class="row p-3 d-flex justify-content-center">
-          <div class="col-sm-12 col-md-4 col-6 col-lg-3 p-2 m-1 border border-danger rounded text-center">
-            <span class="display-2 text-danger"><i class="fab fa-adobe"></i></span>
-            <h3>Buy Adobe</h3>
-            <h4>Price:$40/m</h4>
-            <button type="button" class="btn btn-info py-2 px-4">Buy Now</button>
-          </div>
-
-          <div class="col-sm-12 col-md-4 col-6 col-lg-3 p-2 m-1 border border-danger rounded text-center">
-            <span class="display-2 text-danger"><i class="fab fa-adobe"></i></span>
-            <h3>Buy Adobe</h3>
-            <h4>Price:$40/m</h4>
-            <button type="button" class="btn btn-info py-2 px-4">Buy Now</button>
-          </div>
-
-          <div class="col-sm-12 col-md-4 col-6 col-lg-3 p-2 m-1 border border-danger rounded text-center">
-            <span class="display-2 text-danger"><i class="fab fa-adobe"></i></span>
-            <h3>Buy Adobe</h3>
-            <h4>Price:$40/m</h4>
-            <button type="button" class="btn btn-info py-2 px-4">Buy Now</button>
+        <h1 class="m-1 p-3 text-center display-4">View <u><%= product.title %></u>&nbsp;Details</h1>
+        <div class="row p-3 d-flex justify-content-center">        
+          <div class="card col-6 p-5">
+            <img src="<%= product.imageUrl %>" class="card-img-top" alt="<%= product.title %>">
+            <div class="card-body">
+              <h1 class="card-title"><%= product.title %></h1>              
+              <p class="card-text">Category:<%= product.category %></p>
+              <p class="card-text">Description:<%= product.description %></p>
+              <p class="card-text"><small class="text-muted">More Details coming soon.</small></p>
+            </div>
+             <button type="button" class="btn btn-info py-2 px-4 m-2"><i class="fas fa-cart-plus"></i>&nbsp;Add to Cart.</button><br>
+            <a class="btn btn-primary px-3 m-2" href="/products/modifyProduct/<%= product._id %>"><i class="far fa-edit"></i> Edit</a>
+            <a class="btn btn-danger mx-2" href="/products/deleteProduct/<%= product._id %>"><i class="fa fa-trash"></i> Delete</a>
+          
           </div>
 
 
@@ -49,7 +42,7 @@
 
 
 
-    <footer class="pt-4 my-md-5 pt-md-5 border-top text-left">
+    <footer class="pt-4 my-md-5 pt-md-5  mt-5 border-top text-left">
       <% include ./partials/footer %>
     </footer>
   </main>

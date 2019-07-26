@@ -9,8 +9,8 @@ router.get('/add', function(req, res) {
   });
 router.get('/list', productCtrl.getAllProduct);
 router.post('/saveNewProduct',productCtrl.createProduct);
-router.get('/:id',productCtrl.getOneProduct);
-router.put('/modifyProduct/:id', productCtrl.modifyProduct);
+router.get('/viewSingleProduct/:id',productCtrl.getOneProduct);
+router.put('/saveUpdatedProduct/:id', productCtrl.modifyProduct);
 router.delete('/deleteProduct/:id',productCtrl.deleteOneProduct);
 
 module.exports = router;

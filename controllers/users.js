@@ -19,7 +19,7 @@ exports.signupUser = (req, res, next) => {
       if(req.body.password == req.body.repassword){    
         user.save().then((user) => {
           console.log('user signed with values', user);
-          res.redirect('/userLogin');
+          res.render('userLogin');
         }).catch(
           (error) => {
             res.status(400).json({
@@ -42,7 +42,7 @@ exports.loginUser=(req,res)=> {
       Users.findOne({username : req.body.username, password : req.body.password}, function(err, user){
         if(user != null){
           console.log('Logged in with ', user);
-          res.redirect('/userDashboard');
+          res.render('user-Dashboard');
         }else{
           console.log('User not valid');
         }
