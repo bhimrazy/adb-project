@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ./partials/head%>
+</head>
+
+<body>
+  <header>
+    <% include ./partials/header%>
+  </header>
+  <main role="main" class=" mt-5">
+    <div class="container-fluid">
+      <div class='product-list mt-2 '>
+        <h1 class="m-1 p-3 text-center display-4"><u>Update Product</u></h1>
+        <div class="row p-3 d-flex justify-content-center">
+          <div class="col-sm-12 col-md-12 col-12 col-lg-12 p-2 m-1 border border-info rounded text-center">
+            <span class="display-2 text-danger"><i class="fas fa-file-image"></i></span>
+    <form method="post" action="/saveUpdatedProduct" class="p-3">
+       <input type="hidden" name="_id" value="<%= product._id %>">
+    <div class="form-group row">
+      <label for="inputTitle" class="col-sm-2 col-form-label text-left">Title</label>
+      <input type="text" class="form-control col-sm-10" value="<%= product.title %>id="inputEmail4" placeholder="Title">
+    </div>
+    <div class="form-group row">
+      <label for="inputDescription"  class="col-sm-2 col-form-label text-left">Description</label>
+      <input type="text" class="form-control col-sm-10" id="inputPassword4" value="<%= product.description %> placeholder="Description">
+    </div>
+    
+    <div class="form-group row">
+      <label for="inputPrice" class="col-sm-2 col-form-label text-left">Price(NRs.)</label>
+      <input type="number" class="form-control col-sm-10" id="inputPassword4" value="<%= product.price %> placeholder="Price">
+    </div>
+    
+    <div class="form-group row">
+      <label for="inputImgUrl"  class="col-sm-2 col-form-label text-left">Img Url</label>
+      <input type="url" class="form-control col-sm-10" id="inputPassword4" value="<%= product.url %> placeholder="Img Url">
+    </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top text-left">
+      <% include ./partials/footer %>
+    </footer>
+  </main>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>
